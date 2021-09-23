@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "s": "webpack-dev-server --open",
-    "build": "rm -rf dist && npx webpack ",
-    "b": "rm -rf dist && npx webpack ",
+    "start": "webpack-dev-server --open --config webpack.config.js",
+    "s": "webpack-dev-server --open --config webpack.config.js",
+    "build": "rm -rf dist && npx webpack  --config webpack.config.production.js ",
+    "b": "rm -rf dist && npx webpack  --config webpack.config.production.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mini-css-extract-plugin": "^2.3.0",
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0"
   },

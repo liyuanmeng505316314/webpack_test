@@ -1,6 +1,6 @@
 
 
-import css from './x.css'
+import './x.css'
 
 
 console.log(1)
