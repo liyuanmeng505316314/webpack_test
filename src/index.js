@@ -1,9 +1,9 @@
 
 
-import x from './x'
+import css from './x.css'
 
 
-console.log('1')
+console.log(1)
 
 
 
