@@ -8,7 +8,7 @@ const { Chunk } = require('webpack');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'liyuanmeng.[contenthash].js',
+    filename: 'main.[contenthash].js',
   },
   plugins:[
     new HtmlWebpackPlugin({

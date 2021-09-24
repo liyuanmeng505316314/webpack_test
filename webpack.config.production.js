@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { Chunk } = require('webpack');
 const base =require('./webpack.config.base')
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   ...base,
@@ -26,6 +26,27 @@ module.exports = {
         // 开发的时候用style，开发完成就用MiniCssExtractPlugin.loader
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+      {
+        test: /\.scss$/i,
+        use: [MiniCssExtractPlugin.loader,'css-loader',
+          {
+            loader:"sass-loader",
+            options:{implementation:require("dart-sass")}
+          }
+        ,],
+      },
+      {
+        test: /\.less$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader","less-loader"],
+      },
+      {
+        test: /\.styl$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader","stylus-loader"],// 将 Stylus 文件编译为 CSS
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif|mp3|mp4)$/i,
+        use: ["file-loader"]
+        },
     ],
   },
 
